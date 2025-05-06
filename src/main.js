@@ -19,12 +19,15 @@ let config = {
     render: {
         pixelArt: true  // prevent pixel art from getting blurred when scaled
     },
+    fps: { forceSetTimeOut: true, target: 60 },   // ensure consistent timing across machines
     width: 1000,
     height: 800,
-    scene: [Path]
+    scene: [Game]
 }
 
-// Global variable to hold sprites
-var my = {sprite: {}};
+// Global variables to hold score and lives
+var wave = 0;
+var score = 0;
+var lives = 3;
 
 const game = new Phaser.Game(config);
